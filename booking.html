@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book your stay at Bonz.ai</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <!-- using BEM here (hope i got it right :D ) -->
+            <img src="assets/logo-white.png" alt="Bonz.ai Logo" class="nav__logo">
+            <ul class="nav__menu">
+                <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                <li class="nav__item"><a href="booking.html" class="nav__link">Booking</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section>
+            <h1>Book Your Stay</h1>
+            <form class="booking-form" aria-label="Booking Form">
+                <div class="booking-form__field">
+                    <label for="check-in">Check-in Date</label>
+                    <input type="date" id="check-in" class="booking-form__input" required>
+                </div>
+
+                <div class="booking-form__field">
+                    <label for="check-out">Check-out Date</label>
+                    <input type="date" id="check-out" class="booking-form__input" required>
+                </div>
+
+                <div class="booking-form__field">
+                    <label for="guests">Number of Guests</label>
+                    <select id="guests" class="booking-form__input" required>
+                        <option value="1">1 Guest</option>
+                        <option value="2">2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4+ Guests</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="booking-form__submit">Search Rooms</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Available Rooms</h2>
+<!-- Simulated some results -->
+                <div class="room-results">
+                    <article class="room-card">
+                        <h3 class="room-card__title">Smart Eco Room</h3>
+                        <div class="room-card__details">
+                            <p class="room-card__description">AI-powered sustainable room with city view</p>
+                            <ul class="room-card__features">
+                                <li>Size: 25 m²</li>
+                                <li>Max Occupants: 2 guests</li>
+                                <li>Smart climate control</li>
+                                <li>Eco-friendly amenities</li>
+                            </ul>
+                            <div class="room-card__pricing">
+                                <p class="room-card__price">$199/night</p>
+                                <button class="room-card__select-btn">Select Room</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="room-card">
+                        <h3 class="room-card__title">Green Tech Suite</h3>
+                        <div class="room-card__details">
+                            <p class="room-card__description">Advanced environmental control suite</p>
+                            <ul class="room-card__features">
+                                <li>Size: 45 m²</li>
+                                <li>Max Occupant: 4 guests</li>
+                                <li>Panoramic windows</li>
+                                <li>Full AI home automation</li>
+                                <li>Private balcony</li>
+                            </ul>
+                            <div class="room-card__pricing">
+                                <p class="room-card__price">$299/night</p>
+                                <button class="room-card__select-btn">Select Room</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="room-card">
+                        <h3 class="room-card__title">Sustainable Luxury Studio</h3>
+                        <div class="room-card__details">
+                            <p class="room-card__description">Premium eco-friendly accommodation with cutting-edge technology</p>
+                            <ul class="room-card__features">
+                                <li>Size: 35 m²</li>
+                                <li>Max Occupants: 3 guests</li>
+                                <li>Energy-neutral design</li>
+                                <li>Smart entertainment system</li>
+                                <li>Organic bathroom amenities</li>
+                            </ul>
+                            <div class="room-card__pricing">
+                                <p class="room-card__price">$249/night</p>
+                                <button class="room-card__select-btn">Select Room</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bonz.ai. All rights reserved.</p>
+        <i class="fa fa-brands fa-facebook-f fa-lg" aria-hidden="true"></i>
+        <i class="fa fa-brands fa-reddit fa-lg" aria-hidden="true"></i>
+        <i class="fa fa-brands fa-instagram fa-lg" aria-hidden="true"></i>
+        <i class="fa fa-brands fa-twitter fa-lg" aria-hidden="true"></i>
+    </footer>
+</body>
+</html>

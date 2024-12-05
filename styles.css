@@ -1,0 +1,389 @@
+/* Global color theme */
+:root {
+    --primary-color: #2c3b4b;
+    --secondary-color: #1f2a35;
+    --accent-color: #0099ff;
+    --light-bg: #d4d4d4;
+}
+
+/* I used BEM here - hotel-gallery */
+.hotel-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.hotel-gallery__item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.hotel-gallery__image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.hotel-gallery__item:hover .hotel-gallery__image {
+    transform: scale(1.1);
+}
+
+/* general stuff */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--primary-color);
+    background-color: var(--light-bg);
+}
+
+/* Responsive Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--secondary-color);
+}
+
+.nav__logo {
+    max-width: 150px;
+    height: auto;
+}
+
+.nav__menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav__item {
+    margin-left: 1rem;
+}
+
+.nav__link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav__link:hover {
+    color: var(--accent-color);
+}
+
+/* Mobile Responsive - fix this before sending */
+@media screen and (max-width: 576px) {
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav__menu {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .nav__item {
+        margin: 0.5rem 0;
+    }
+
+    .container {
+        width: 95%;
+    }
+}
+
+/* Booking */
+.booking-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.booking-form__field {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.booking-form__input {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    font-weight: 700;
+    color: rgb(83, 83, 83);
+}
+
+/* leftover/remove? */
+a:focus, button:focus {
+    outline: 3px solid var(--accent-color);
+} 
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.room-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.room-card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    height: 100%; 
+}
+
+.room-card:hover {
+    transform: translateY(-15px);
+}
+
+.room-card__title {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 1rem;
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.room-card__details {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+    padding: 1rem;
+}
+
+.room-card__description {
+    font-style: italic;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.room-card__features {
+    flex-grow: 1;
+    margin-bottom: 1rem;
+}
+
+.room-card__features li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.room-card__features li:last-child {
+    border-bottom: none;
+}
+
+.room-card__features li::before {
+    content: '✓';
+    color: var(--accent-color);
+    margin-right: 0.75rem;
+    font-weight: bold;
+}
+
+.room-card__pricing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-top: auto; /* Push to the bottom */
+    border-top: 1px solid #eee;
+}
+
+.room-card__price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.room-card__select-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.room-card__select-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Mobile - i need t fix before sending, put all mobile stuff in the same place*/
+@media screen and (max-width: 576px) {
+    .room-results {
+        grid-template-columns: 1fr;
+    }
+
+    .room-card__title {
+        font-size: 1.1rem;
+    }
+
+    .room-card__price {
+        font-size: 1.25rem;
+    }
+
+    .room-card__select-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Hero section */
+.hero {
+    text-align: center;
+    padding: 3rem 0;
+    background-color: var(--light-bg);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.hero__subtitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+hr {
+    margin: 1rem;
+    color: var(--secondary-color);
+    opacity: 40%;
+}
+
+video {
+    width: 60vw;
+    height: auto;
+    border-radius: 10px;
+    margin: 1rem;
+}
+
+/* Introsection */
+.introduction, .commitment {
+    text-align: center;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.feature {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.feature h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.invitation {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: var(--light-bg);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #2980b9;
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+/* those pesky social media icons */
+
+.fa {
+    margin: 1em;
+}
+
+/* Even more mobile stuff */
+@media screen and (max-width: 576px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* annoying booking button */
+
+.booking-form__submit {
+        margin: 2rem;
+        background-color: var(--accent-color);
+        color: white;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+}
+    
+.booking-form__submit:hover {
+        background-color: #2980b9;
+}
